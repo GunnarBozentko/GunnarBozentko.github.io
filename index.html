@@ -3,21 +3,69 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello</title>
+  <title>Gunnar Bozentko</title>
+  <meta name="description" content="Gunnar Bozentko — statistician, data scientist, Arsenal supporter, occasional skier.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Hello, world.</h1>
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="wordmark" href="index.html">Gunnar Bozentko</a>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">About</a></li>
+        <li><a href="skiing.html">Skiing</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <p>
-    This page is live. That is the only thing it is here to prove.
-  </p>
+  <main>
+    <!-- Add a real photo at assets/photo.jpg and this will pick it up automatically. -->
+    <img class="avatar" src="assets/photo.jpg" alt="Photo of Gunnar Bozentko" onerror="this.style.display='none'">
 
-  <p>
-    Everything about it is yours to delete. Open Claude Code in this folder and
-    tell it what you actually want to build.
-  </p>
+    <h1>Hi, I'm Gunnar.</h1>
+
+    <p>
+      I just graduated magna cum laude with a BS in Statistics from the
+      Colorado School of Mines (Aug 2022&ndash;May 2026), and I'm continuing
+      there as a graduate student in the 4+1 Data Science program.
+    </p>
+
+    <p>
+      Outside of coursework, I'm a huge Arsenal supporter &mdash; I don't
+      miss a match if I can help it &mdash; and I play soccer myself. I also
+      ski whenever I get the chance, and I've started keeping a running log
+      of every place I've skied, mapped out on the <a href="skiing.html">skiing
+      page</a>.
+    </p>
+
+    <ul class="tags">
+      <li>Statistics</li>
+      <li>Data Science</li>
+      <li>Arsenal FC</li>
+      <li>Soccer</li>
+      <li>Skiing</li>
+    </ul>
+
+    <p>
+      Want the professional details? Check out my <a href="resume.html">resume
+      and experience</a> page.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>
+        <a href="mailto:gunnarbozentko@mines.edu">Email</a>
+        &middot;
+        <a href="https://github.com/GunnarBozentko">GitHub</a>
+      </p>
+    </div>
+  </footer>
 
 </body>
 </html>

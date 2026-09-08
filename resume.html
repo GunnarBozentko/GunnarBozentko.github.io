@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume — Gunnar Bozentko</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="wordmark" href="index.html">Gunnar Bozentko</a>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="skiing.html">Skiing</a></li>
+        <li><a href="resume.html" aria-current="page">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wide">
+    <h1>Resume</h1>
+    <p class="muted">
+      Sourced from <code>data/resume.csv</code>.
+    </p>
+
+    <div id="resume-content">
+      <p class="muted">Loading&hellip;</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>
+        <a href="mailto:gunnarbozentko@mines.edu">Email</a>
+        &middot;
+        <a href="https://github.com/GunnarBozentko">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="csv.js"></script>
+  <script src="resume.js"></script>
+</body>
+</html>
