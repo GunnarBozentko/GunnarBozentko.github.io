@@ -60,6 +60,17 @@ p {
   margin: 0 0 var(--space-3);
 }
 
+main > ul,
+main > ol {
+  margin: 0 0 var(--space-3);
+  padding-left: 1.25rem;
+}
+
+main > ul li,
+main > ol li {
+  margin-bottom: var(--space-1);
+}
+
 a {
   color: var(--accent);
   text-decoration: none;
@@ -250,6 +261,134 @@ table.ski-table {
   padding: var(--space-4);
   color: var(--muted);
   text-align: center;
+}
+
+/* Ski map + elevation chart */
+
+.ski-section {
+  margin-bottom: var(--space-8);
+}
+
+.ski-map {
+  height: 420px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.ski-marker-dot {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+
+.ski-marker-star svg {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 0 4px rgba(239, 1, 7, 0.7));
+}
+
+.leaflet-container {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--surface);
+}
+
+.leaflet-control-zoom a {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--border) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(20, 23, 28, 0.85) !important;
+  color: var(--muted) !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--muted) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.leaflet-popup-tip {
+  background: var(--surface);
+}
+
+.leaflet-popup-content {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.95rem;
+  margin: var(--space-2);
+}
+
+.leaflet-popup-content strong {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.elev-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.elev-row {
+  display: grid;
+  grid-template-columns: minmax(9ch, 18ch) 1fr auto;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.elev-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.elev-label svg {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  filter: drop-shadow(0 0 3px rgba(239, 1, 7, 0.7));
+}
+
+.elev-bar-track {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.elev-bar {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+.elev-bar--max {
+  background: var(--accent-strong);
+}
+
+.elev-value {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 /* Resume */
