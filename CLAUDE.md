@@ -87,19 +87,24 @@ Done:
 - Fun facts added to `index.html` (dogs/cat, club soccer, hobbies, favorite
   Arsenal player, Rubik's cube, Rocket League rank) via interview.
 - LinkedIn link added to the footer on all three pages.
-- `TROUBLESHOOTING.md` started, two real entries logged.
+- `TROUBLESHOOTING.md` started, four real entries logged.
+- `data/ski-log.csv` has real rows now: Stratton Mountain (2009–2026),
+  Copper Mountain (2022–2025), Jackson Hole (2025–2026).
+- Resume content revised via interview: added real Mines coursework (MATH
+  538, DSCI 570/560/561, CSCI 598, MATH 440 w/ OpenMP+MPI), dropped the
+  activities line, added Shapely and an "Agentic AI Tools" skill (Claude
+  Code, GitHub Copilot), filled in award dates, and removed the UBS
+  Scholarship and Presidential Scholar entries (the latter cut specifically
+  to make the one-page PDF fit).
+- **PDF resume**: built. `resume-print.html` + `resume-print.js` render a
+  print-styled, light-background view of `data/resume.csv` (same data
+  source as `resume.html`, so it can't drift) with a contact header
+  (phone/email/LinkedIn/GitHub) and a "Download / Print PDF" button that
+  calls `window.print()`. Linked from `resume.html` via a "Download PDF"
+  button. Verified in a real browser and with actual `--print-to-pdf`
+  output — fits on one page as of 2026-09-13.
 
 Not done yet:
-- `data/ski-log.csv` still needs real rows from the user (resort, dates,
-  coordinates, elevation) — they know their own ski history better than an
-  agent should guess.
-- **PDF resume**: user asked for an actual downloadable PDF resume,
-  generated from `data/resume.csv` (so it doesn't drift from the page), and
-  linked from `resume.html` (e.g. a "Download PDF" button near the top).
-  Not started — needs a rendering approach decided (e.g., a print-styled
-  HTML view of the resume data plus browser print-to-PDF, since there's no
-  build step / PDF library available in this static-only setup). Ask the
-  user before implementing.
 - No real photo yet — `index.html` references `assets/photo.jpg`, which
   doesn't exist. The `<img>` fails gracefully (hides itself via `onerror`)
   until it's added.
@@ -111,6 +116,30 @@ Not done yet:
   one-time deliverable done near the end, not something to update on every
   change.
 - No video yet.
+
+## Future design direction (hero shell)
+
+The user shared a reference image they like for a future redesign of the
+homepage hero/shell: a dark, cinematic hero with a **low-poly wireframe
+mountain** as the centerpiece — a triangulated mesh/constellation made of
+connected dots and thin lines (like a 3D point-cloud or network-graph
+render of a mountain ridge), glowing warm-orange accent dots at some
+vertices, set against near-black. Minimal top nav, a two-column text
+block flanking the mountain (headline + short copy on one side, a stat or
+secondary blurb on the other), and a row of small feature/stat blocks
+along the bottom.
+
+Why it's a good fit here specifically: the low-poly mountain visual
+maps directly onto the ski theme (elevation, peaks, the star-marker
+motif already used on the ski map), so it's not just "look cool," it's
+on-brand. This is a bigger visual swing than the current clean-but-safe
+shell (see the "does this look AI-generated" conversation from
+2026-09-10) — a good candidate for the site's "one bold move" if/when
+the user wants to revisit the shell. Likely implementation: an SVG or
+canvas-drawn low-poly mesh (hand-built points/triangles, or a small
+generative script), not a photo — keep it as inline SVG/CSS to stay
+build-step-free. Don't start this unprompted; the user will bring it up
+when ready.
 
 ## Working conventions
 

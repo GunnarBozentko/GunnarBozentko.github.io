@@ -1,13 +1,13 @@
 section,title,organization,location,start_date,end_date,description
-Education,MS Data Science (4+1 program),Colorado School of Mines,"Golden, CO",2026-05,,"Continuing coursework toward the degree, including DSCI 503 (machine learning algorithms and data manipulation with NumPy, Scikit-learn, TensorFlow, and Pandas)"
-Education,BS Statistics (magna cum laude),Colorado School of Mines,"Golden, CO",2022-08,2026-05,"Major GPA: 3.96; Member of Sigma Phi Epsilon and Men's Club Soccer, 2022-2025"
+Education,MS Data Science (4+1 program),Colorado School of Mines,"Golden, CO",2026-05,,"Relevant coursework: MATH 538 Stochastic Models, DSCI 570 Machine Learning, DSCI 560/561 Introduction to Statistical Methods I & II, CSCI 598 Coding with AI Agents"
+Education,BS Statistics (magna cum laude),Colorado School of Mines,"Golden, CO",2022-08,2026-05,"Major GPA: 3.96; Relevant coursework: MATH 440 Parallel Computing (OpenMP, MPI)"
 Experience,"AI Engineer, AI and Autonomy Department",Naval Air Warfare Center Aircraft Division (NAWCAD),"Patuxent River, MD",2026-06,2026-08,"Built the software development foundation for a new autonomy program from scratch, including initial architecture, coding standards, and cross-team coordination meetings; Designed and implemented validation metrics for autonomous collaborative platforms (ACPs), including a distance-to-closest-approach metric and a geofence-violation metric; Collaborated with a mentor on early-stage research into mathematically validating AI safety in high-consequence scenarios where failure is not an option"
 Experience,Predictive Client Solutions Intern,Wiland Inc.,"Niwot, CO",2024-06,2024-08,"Developed and validated statistical models using R, Python, Alteryx, and SQL; Built a capstone report pipeline that extracted SQL data into Python via Pandas DataFrame, comparing client data against market data"
 Experience,"Grader and Teaching Assistant, Introduction to Probability and Linear Algebra",Colorado School of Mines,"Golden, CO",2024-01,,"Support student learning through grading and one-on-one assistance; Provide clear explanations of fundamental probability and linear algebra concepts"
-Projects,Stochastic Modeling in Stock Market Analysis,,,,,"Used R Studio and stochastic techniques, including Geometric Brownian Motion, to simulate and predict short- and long-term stock price trends from historical data"
-Projects,Fraud Detection with Machine Learning,,,,,"Built a fraud-detection pipeline from scratch using Random Forest and SVM; Handled data cleaning, normalization, and cross-validation to improve model accuracy"
+Projects,Stochastic Modeling in Stock Market Analysis,,,,2026,"Used R Studio and stochastic techniques, including Geometric Brownian Motion, to simulate and predict short- and long-term stock price trends from historical data"
+Projects,Fraud Detection with Machine Learning,,,,2025,"Built a fraud-detection pipeline from scratch using Random Forest and SVM; Handled data cleaning, normalization, and cross-validation to improve model accuracy"
 Skills,Languages,,,,,Python; C++; LaTeX; R; MATLAB; Alteryx; SQL
-Skills,Libraries,,,,,Pandas; NumPy; Scikit-learn; Matplotlib; Seaborn; TensorFlow; PyTorch
-Awards,DOD SMART Scholarship,,,2025-04,,"Science, Mathematics, and Research for Transformation Scholarship-for-Service Program"
-Awards,Presidential Scholar,Colorado School of Mines,,,,
-Awards,UBS Scholarship,Colorado School of Mines,,,,
+Skills,Libraries,,,,,Pandas; NumPy; Scikit-learn; Matplotlib; Seaborn; TensorFlow; PyTorch; Shapely
+Skills,Tools,,,,,OpenMP; MPI
+Skills,Agentic AI Tools,,,,,Claude Code; GitHub Copilot
+Awards,DOD SMART Scholarship,,,2025-04,,"Science, Mathematics, and Research for Transformation Scholarship-for-Service Program; Funds senior year and MS Data Science degree in exchange for DoD service, including the AI Engineer internship at NAWCAD"
