@@ -12,68 +12,17 @@
     return Number.isFinite(n) ? n : null;
   }
 
-  // The CSV mixes per-visit rows (date, notes — can repeat per resort) with
-  // per-resort facts (lat, lon, elevation — should be constant). Dedup by
-  // resort name before mapping/charting; the table below still renders the
-  // raw per-visit rows untouched.
+  // One row per resort in the CSV now (no per-visit date/notes tracking).
   function buildResorts(rows) {
-    const byName = new Map();
-    for (const r of rows) {
-      const name = (r.resort || "").trim();
-      if (!name) continue;
-      const key = name.toLowerCase();
-      const lat = toNumber(r.lat);
-      const lon = toNumber(r.lon);
-      const elev = toNumber(r.elevation_ft);
-      const existing = byName.get(key);
-      if (!existing) {
-        byName.set(key, {
-          resort: name,
-          state_or_country: r.state_or_country || "",
-          lat,
-          lon,
-          elevation_ft: elev,
-        });
-      } else {
-        if (existing.lat == null) existing.lat = lat;
-        if (existing.lon == null) existing.lon = lon;
-        if (existing.elevation_ft == null) existing.elevation_ft = elev;
-      }
-    }
-    return [...byName.values()];
-  }
-
-  function renderTable(rows) {
-    const body = rows
-      .map(
-        (r) => `
-        <tr>
-          <td>${r.resort || ""}</td>
-          <td>${r.state_or_country || ""}</td>
-          <td>${r.date || ""}</td>
-          <td>${r.notes || ""}</td>
-        </tr>`
-      )
-      .join("");
-
-    return `
-      <section class="ski-section">
-        <h2>Log</h2>
-        <div class="table-wrap">
-          <table class="ski-table">
-            <thead>
-              <tr>
-                <th>Resort</th>
-                <th>Where</th>
-                <th>Date</th>
-                <th>Notes</th>
-              </tr>
-            </thead>
-            <tbody>${body}</tbody>
-          </table>
-        </div>
-        <p class="muted" style="margin-top: 1rem;">${rows.length} place${rows.length === 1 ? "" : "s"} logged.</p>
-      </section>`;
+    return rows
+      .map((r) => ({
+        resort: (r.resort || "").trim(),
+        state_or_country: r.state_or_country || "",
+        lat: toNumber(r.lat),
+        lon: toNumber(r.lon),
+        elevation_ft: toNumber(r.elevation_ft),
+      }))
+      .filter((r) => r.resort);
   }
 
   function renderMapSection(mappable) {
@@ -208,10 +157,7 @@
       .sort((a, b) => b.elevation_ft - a.elevation_ft);
     const maxResort = chartable[0] ?? null;
 
-    el.innerHTML =
-      renderMapSection(mappable) +
-      renderChartSection(chartable) +
-      renderTable(rows);
+    el.innerHTML = renderMapSection(mappable) + renderChartSection(chartable);
 
     // The map container must exist in the DOM (set via innerHTML above)
     // before Leaflet can measure it and place tiles.

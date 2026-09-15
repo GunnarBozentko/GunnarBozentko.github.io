@@ -1,25 +1,19 @@
-resort,state_or_country,date,notes,lat,lon,elevation_ft
-Stratton Mountain,Vermont,Winter 2009,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2010,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2011,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2012,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2013,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2014,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2015,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2016,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2017,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2018,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2019,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2020,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2021,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2022,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2023,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2024,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2025,,43.1134,-72.9081,3875
-Stratton Mountain,Vermont,Winter 2026,,43.1134,-72.9081,3875
-Copper Mountain,Colorado,December 2022,,39.5022,-106.1512,12441
-Copper Mountain,Colorado,Winter 2023,,39.5022,-106.1512,12441
-Copper Mountain,Colorado,Winter 2024,,39.5022,-106.1512,12441
-Copper Mountain,Colorado,Winter 2025,,39.5022,-106.1512,12441
-Jackson Hole,Wyoming,March 2025,,43.5875,-110.8279,10450
-Jackson Hole,Wyoming,March 2026,,43.5875,-110.8279,10450
+resort,state_or_country,notes,lat,lon,elevation_ft
+Stratton Mountain,Vermont,,43.1134,-72.9081,3875
+Copper Mountain,Colorado,,39.5022,-106.1512,12441
+Jackson Hole,Wyoming,,43.5875,-110.8279,10450
+Mount Southington,Connecticut,,41.6001,-72.8804,925
+Winter Park,Colorado,,39.8868,-105.7625,12060
+Eldora,Colorado,,39.9375,-105.5828,10600
+Arapahoe Basin,Colorado,,39.6425,-105.8719,13050
+Palisades Tahoe,California,,39.1968,-120.2357,9050
+Sunday River,Maine,,44.4737,-70.8574,3140
+Killington,Vermont,,43.6045,-72.8201,4241
+Okemo,Vermont,,43.4009,-72.7168,3344
+Magic Mountain,Vermont,,43.1934,-72.7620,3133
+Bromley Mountain,Vermont,,43.2273,-72.9346,3284
+Mohawk Mountain,Connecticut,,41.8365,-73.2882,1600
+Thunder Ridge,New York,,41.4667,-73.6062,1200
+Steamboat,Colorado,,40.4572,-106.8045,10568
+Brighton,Utah,,40.5977,-111.5836,10500
+Alta,Utah,,40.5884,-111.6386,10550

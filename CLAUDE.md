@@ -18,13 +18,12 @@ soccer, skis and is logging every place skied.
   scroll sections (hero/about/interests/facts/cta) over a fixed background
   of two crossfading gradient layers.
 - `skiing.html` + `skiing.js` — renders `data/ski-log.csv` as an interactive
-  Leaflet map (dark Esri tiles, star marker on the highest-elevation resort),
-  a horizontal elevation bar chart, and the original table — in that order.
-  Map/chart dedup rows by resort name (`buildResorts()`); the table still
-  renders raw per-visit rows. Each of the three sections independently shows
-  its own empty-state if it doesn't have enough data yet (see the
-  degradation table in the plan file, or just read `skiing.js` — it's
-  short).
+  Leaflet map (dark Esri tiles, star marker on the highest-elevation resort)
+  and a horizontal elevation bar chart — in that order. One row per resort
+  in the CSV now (no per-visit date/notes tracking, and no table — dropped
+  2026-09-15 since without dates it was just a redundant resort list).
+  Each section independently shows its own empty-state if it doesn't have
+  enough data yet (see `skiing.js` — it's short).
 - `resume.html` + `resume.js` — renders `data/resume.csv` grouped by
   `section`. Generic — adding a new `section` value in the CSV (e.g.
   "Projects") just works, no code change needed.
@@ -77,11 +76,12 @@ the browser, not a bug.
 
 ## Data files
 
-- `data/ski-log.csv` — columns: `resort, state_or_country, date, notes, lat,
-  lon, elevation_ft`. Currently empty (header only). `lat`/`lon` are decimal
-  degrees; `elevation_ft` is a plain integer (no unit suffix, stays
-  numeric). Rows can be added incrementally with some fields blank — the
-  map/chart skip what they can't use and the table always shows everything.
+- `data/ski-log.csv` — columns: `resort, state_or_country, notes, lat, lon,
+  elevation_ft`. One row per resort (no visit dates — dropped 2026-09-15,
+  see skiing.html/skiing.js note above). `lat`/`lon` are decimal degrees;
+  `elevation_ft` is a plain integer (no unit suffix, stays numeric). Rows
+  can be added incrementally with some fields blank — the map/chart each
+  skip what they can't use.
 - `data/resume.csv` — columns: `section, title, organization, location,
   start_date, end_date, description` (description bullets separated by `;`).
   Filled in with real content: Education, Experience (NAWCAD AI Engineer
