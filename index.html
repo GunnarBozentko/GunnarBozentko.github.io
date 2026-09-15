@@ -10,7 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-body">
+
+  <div class="bg-layer bg-layer--a" aria-hidden="true"></div>
+  <div class="bg-layer bg-layer--b" aria-hidden="true"></div>
 
   <header class="site-header">
     <nav class="site-nav">
@@ -23,48 +26,76 @@
     </nav>
   </header>
 
-  <main>
-    <!-- Add a real photo at assets/photo.jpg and this will pick it up automatically. -->
-    <img class="avatar" src="assets/photo.jpg" alt="Photo of Gunnar Bozentko" onerror="this.style.display='none'">
+  <main class="home">
 
-    <h1>Hi, I'm Gunnar.</h1>
+    <section id="hero" class="panel panel--hero" data-gradient="t1">
+      <div class="hero-inner">
+        <!-- Add a real photo at assets/photo.jpg and this will pick it up automatically. -->
+        <img class="avatar" src="assets/photo.jpg" alt="Photo of Gunnar Bozentko" onerror="this.style.display='none'">
+        <p class="eyebrow">Statistics &rarr; Data Science</p>
+        <h1>Hi, I'm Gunnar.</h1>
+        <p class="hero-sub">
+          Magna cum laude BS in Statistics from the Colorado School of Mines,
+          now staying on for the 4+1 Data Science graduate program.
+        </p>
+        <div class="hero-cta">
+          <a class="button" href="resume.html">View r&eacute;sum&eacute;</a>
+          <a class="button button--ghost" href="skiing.html">See the ski map</a>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      I just graduated magna cum laude with a BS in Statistics from the
-      Colorado School of Mines (Aug 2022&ndash;May 2026), and I'm continuing
-      there as a graduate student in the 4+1 Data Science program.
-    </p>
+    <section id="about" class="panel" data-gradient="t2">
+      <h2>About</h2>
+      <p>
+        I just graduated magna cum laude with a BS in Statistics from the
+        Colorado School of Mines (Aug 2022&ndash;May 2026), and I'm continuing
+        there as a graduate student in the 4+1 Data Science program.
+      </p>
+      <p>
+        Want the professional details? Check out my <a href="resume.html">resume
+        and experience</a> page.
+      </p>
+    </section>
 
-    <p>
-      Outside of coursework, I'm a huge Arsenal supporter &mdash; I don't
-      miss a match if I can help it &mdash; and I play soccer myself. I also
-      ski whenever I get the chance, and I've started keeping a running log
-      of every place I've skied, mapped out on the <a href="skiing.html">skiing
-      page</a>.
-    </p>
+    <section id="interests" class="panel" data-gradient="t3">
+      <h2>Off the clock</h2>
+      <p>
+        I'm a huge Arsenal supporter &mdash; I don't miss a match if I can help
+        it &mdash; and I play soccer myself. I also ski whenever I get the
+        chance, and I've started keeping a running log of every place I've
+        skied, mapped out on the <a href="skiing.html">skiing page</a>.
+      </p>
+      <ul class="tags">
+        <li>Statistics</li>
+        <li>Data Science</li>
+        <li>Arsenal FC</li>
+        <li>Soccer</li>
+        <li>Skiing</li>
+      </ul>
+    </section>
 
-    <ul class="tags">
-      <li>Statistics</li>
-      <li>Data Science</li>
-      <li>Arsenal FC</li>
-      <li>Soccer</li>
-      <li>Skiing</li>
-    </ul>
+    <section id="facts" class="panel" data-gradient="t4">
+      <h2>Fun facts</h2>
+      <ul>
+        <li>I have two white chihuahuas, Pearl and Pippa, and a tabby cat named Cleo.</li>
+        <li>I played club soccer for Colorado School of Mines for all four years of undergrad.</li>
+        <li>In my free time I play chess, ski, play soccer, read, and work out.</li>
+        <li>My favorite Arsenal player is Bukayo Saka.</li>
+        <li>I can solve a Rubik's cube.</li>
+        <li>I'm Grand Champion 3 in Rocket League.</li>
+      </ul>
+    </section>
 
-    <p>
-      Want the professional details? Check out my <a href="resume.html">resume
-      and experience</a> page.
-    </p>
+    <section id="cta" class="panel panel--cta" data-gradient="t5">
+      <h2>Want more?</h2>
+      <p>
+        Take a look at my <a href="resume.html">r&eacute;sum&eacute; and
+        experience</a>, or check out the <a href="skiing.html">interactive
+        ski map</a>.
+      </p>
+    </section>
 
-    <h2>Fun facts</h2>
-    <ul>
-      <li>I have two white chihuahuas, Pearl and Pippa, and a tabby cat named Cleo.</li>
-      <li>I played club soccer for Colorado School of Mines for all four years of undergrad.</li>
-      <li>In my free time I play chess, ski, play soccer, read, and work out.</li>
-      <li>My favorite Arsenal player is Bukayo Saka.</li>
-      <li>I can solve a Rubik's cube.</li>
-      <li>I'm Grand Champion 3 in Rocket League.</li>
-    </ul>
   </main>
 
   <footer class="site-footer">
@@ -79,5 +110,6 @@
     </div>
   </footer>
 
+  <script src="scroll-gradient.js"></script>
 </body>
 </html>
