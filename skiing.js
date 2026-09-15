@@ -218,6 +218,8 @@
     if (mappable.length > 0) {
       initMap(mappable, maxResort);
     }
+
+    window.initScrollGradient && window.initScrollGradient();
   } catch (err) {
     el.innerHTML = `<div class="empty-state">Couldn't load the ski log. If you're previewing this by double-clicking the file, run <code>python3 -m http.server 8000</code> instead — the browser blocks local file loads otherwise.</div>`;
   }

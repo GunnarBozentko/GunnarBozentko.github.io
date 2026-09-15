@@ -14,8 +14,9 @@ soccer, skis and is logging every place skied.
 
 ## Site structure
 
-- `index.html` — About/home: bio, hobby tags, fun facts, links to the other
-  two pages.
+- `index.html` — About/home, redesigned (2026-09-14) as five full-height
+  scroll sections (hero/about/interests/facts/cta) over a fixed background
+  of two crossfading gradient layers.
 - `skiing.html` + `skiing.js` — renders `data/ski-log.csv` as an interactive
   Leaflet map (dark Esri tiles, star marker on the highest-elevation resort),
   a horizontal elevation bar chart, and the original table — in that order.
@@ -27,6 +28,22 @@ soccer, skis and is logging every place skied.
 - `resume.html` + `resume.js` — renders `data/resume.csv` grouped by
   `section`. Generic — adding a new `section` value in the CSV (e.g.
   "Projects") just works, no code change needed.
+- `scroll-gradient.js` — shared by all three pages (2026-09-14). Crossfades
+  the fixed two-layer gradient background between `t1`..`t5` themes and
+  drives a right-edge dot nav, keyed off whichever `<section>` inside
+  `<main>` currently crosses the vertical center of the viewport
+  (`IntersectionObserver` with `rootMargin: '-50% 0px -50% 0px'`, not plain
+  `isIntersecting`/threshold — that was tried first and skips sections on
+  fast/instant scrolls, caught via CDP scroll testing). `index.html`'s
+  sections set their own `data-gradient` explicitly (`t1`..`t5` in order);
+  `skiing.html`/`resume.html` get theirs auto-assigned cyclically by the
+  script since those sections are generated at runtime from CSV data —
+  `skiing.js`/`resume.js` each call `window.initScrollGradient()` after
+  setting `innerHTML`, since the script's own on-load pass runs before the
+  fetch resolves and finds nothing. Only `main section` elements are
+  affected — `.ski-section`/`.resume-section` keep their natural height
+  (no forced full-viewport panels like the homepage's `.panel`), so a short
+  resume section or the map doesn't get stretched with empty space.
 - `csv.js` — shared minimal CSV parser (handles quoted fields), used by both
   data pages. Don't duplicate this logic per-page.
 - `style.css` — single stylesheet, dark theme, shared by all pages.
@@ -103,6 +120,27 @@ Done:
   calls `window.print()`. Linked from `resume.html` via a "Download PDF"
   button. Verified in a real browser and with actual `--print-to-pdf`
   output — fits on one page as of 2026-09-13.
+- **Scroll-gradient redesign** (2026-09-14): `index.html` rebuilt as five
+  full-height scroll sections with a fixed two-layer gradient background
+  that crossfades per section; dot nav on the right tracks the active
+  section and jumps to it on click. Originally scoped to the homepage only
+  (user said "keep a similar dark theme" on skiing/resume), then the user
+  asked to extend the same crossfade + dot-nav treatment to those two pages
+  as well — done via the shared `scroll-gradient.js` (see above), but
+  *without* forcing their content into full-viewport panels like the
+  homepage's `.panel` (user's explicit choice when asked: gradient
+  background only, natural content height, not slide-style sections — a
+  420px map or a two-line resume entry stretched to 90vh would've looked
+  broken). This is a different, lighter visual direction than the low-poly
+  wireframe mountain concept below (that one's still just noted for later,
+  not started) — the user asked for "cooler and more professional, less
+  typical AI" plus a scroll-driven color change, and this was scoped as a
+  same-day CSS/JS pass rather than the bigger mountain-mesh build. Verified
+  with a real headless-Chromium scroll-and-screenshot pass (CDP, not just a
+  static screenshot) on all three pages — this caught and fixed a real bug
+  where the first version of the section-detection logic (plain
+  `IntersectionObserver` + `isIntersecting`) skipped sections on fast
+  scrolls; see the `scroll-gradient.js` note above.
 
 Not done yet:
 - No real photo yet — `index.html` references `assets/photo.jpg`, which
