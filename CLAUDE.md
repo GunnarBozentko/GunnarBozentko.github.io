@@ -143,9 +143,12 @@ Done:
   scrolls; see the `scroll-gradient.js` note above.
 
 Not done yet:
-- No real photo yet — `index.html` references `assets/photo.jpg`, which
-  doesn't exist. The `<img>` fails gracefully (hides itself via `onerror`)
-  until it's added.
+- No real photos yet — `index.html` references `assets/photo.jpg` (hero)
+  and, as of 2026-09-15, `assets/photos/soccer.jpg`, `skiing.jpg`, and
+  `pets.jpg` (a 3-slot photo grid in the Interests section). None of these
+  exist. Each `<img>`/slot fails gracefully (hides itself via `onerror`)
+  until the file is added — the grid looks fine with zero, one, two, or
+  three photos present.
 - `DECISIONS.md` is still unanswered (all five questions are placeholders).
   Q2 (fork in the road) has real material now — interactive Leaflet map vs.
   a simpler static graphic — but the user should write the answer
