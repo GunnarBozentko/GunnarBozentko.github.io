@@ -212,6 +212,13 @@ footer.site-footer a:hover {
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
   font-size: 0.9rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.tags li:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateY(-2px);
 }
 
 /* Photo grid, Interests section — collapses gracefully per-slot when a
@@ -224,6 +231,11 @@ footer.site-footer a:hover {
   margin: var(--space-1) 0 0;
 }
 
+.photo-grid__item {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
 .photo-grid__item img {
   display: block;
   width: 100%;
@@ -231,6 +243,11 @@ footer.site-footer a:hover {
   object-fit: cover;
   border-radius: 8px;
   border: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+
+.photo-grid__item:hover img {
+  transform: scale(1.06);
 }
 
 /* Fun facts, icon list */
@@ -259,6 +276,11 @@ footer.site-footer a:hover {
   margin-top: 0.1em;
   color: var(--accent);
   fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.icon-list li:hover svg {
+  transform: scale(1.15);
 }
 
 /* Resume contact line */
@@ -501,12 +523,15 @@ table.ski-table {
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.95rem;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover,
 .button:focus-visible {
   text-decoration: none;
   background: #c40105;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(239, 1, 7, 0.3);
 }
 
 @media (max-width: 480px) {
@@ -640,6 +665,7 @@ main.home {
   color: var(--accent);
   background: transparent;
   text-decoration: none;
+  transform: translateY(-1px);
 }
 
 .panel--cta p {
@@ -690,10 +716,21 @@ main.home {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bg-layer {
+  .bg-layer,
+  .section-dots button,
+  .tags li,
+  .icon-list svg,
+  .photo-grid__item img,
+  .button,
+  .button--ghost {
     transition: none;
   }
-  .section-dots button {
-    transition: none;
+
+  .tags li:hover,
+  .button:hover,
+  .button--ghost:hover,
+  .icon-list li:hover svg,
+  .photo-grid__item:hover img {
+    transform: none;
   }
 }

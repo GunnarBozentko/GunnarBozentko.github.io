@@ -16,7 +16,9 @@ soccer, skis and is logging every place skied.
 
 - `index.html` — About/home, redesigned (2026-09-14) as five full-height
   scroll sections (hero/about/interests/facts/cta) over a fixed background
-  of two crossfading gradient layers.
+  of two crossfading gradient layers. Fun facts use an icon-list (inline
+  SVGs, not emoji) and Interests has a 3-slot photo grid — both added
+  2026-09-15, see Data files below for the placeholder photo paths.
 - `skiing.html` + `skiing.js` — renders `data/ski-log.csv` as an interactive
   Leaflet map (dark Esri tiles, star marker on the highest-elevation resort)
   and a horizontal elevation bar chart — in that order. One row per resort
@@ -181,6 +183,16 @@ canvas-drawn low-poly mesh (hand-built points/triangles, or a small
 generative script), not a photo — keep it as inline SVG/CSS to stay
 build-step-free. Don't start this unprompted; the user will bring it up
 when ready.
+
+**Tried 2026-09-15, reverted**: built a static inline-SVG version scoped
+to the hero only, with the glow color adapted to the site's actual accent
+red instead of the reference's warm-orange. The user didn't like the
+result (a screenshot showed the mesh legible but the accent dots/star too
+small/misplaced to read well) and asked to revert rather than keep
+iterating — back to "not started." If revisited, worth reconsidering the
+whole approach (e.g. a less busy/lower-triangle-count mesh, a different
+accent treatment, or the full two-column reference layout) rather than
+just re-tuning the same mesh generation script.
 
 ## Working conventions
 
