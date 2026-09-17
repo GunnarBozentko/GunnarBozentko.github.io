@@ -63,8 +63,15 @@
       .map(
         (section) => `
         <section class="resume-section">
-          <h2>${section}</h2>
-          ${bySection[section].map(renderEntry).join("")}
+          <details class="resume-toggle" open>
+            <summary class="resume-toggle__summary">
+              <h2>${section}</h2>
+              <span class="resume-toggle__chevron" aria-hidden="true"></span>
+            </summary>
+            <div class="resume-toggle__body">
+              ${bySection[section].map(renderEntry).join("")}
+            </div>
+          </details>
         </section>`
       )
       .join("");
