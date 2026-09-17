@@ -319,7 +319,7 @@ footer.site-footer a:hover {
   font-weight: 700;
 }
 
-.facts-wheel__face--fact {
+.facts-wheel__face--fact:not([hidden]) {
   display: flex;
   flex-direction: column;
   align-items: center;
