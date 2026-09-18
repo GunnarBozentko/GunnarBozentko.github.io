@@ -75,7 +75,7 @@
         <details class="facts-list__item">
           <summary>${fact.icon}${fact.label}</summary>
           <div class="facts-list__body">
-            <img src="${fact.photo}" alt="" onerror="this.parentElement.style.display='none'">
+            <img src="${fact.photo}" alt="" onerror="this.style.display='none'">
             <p>${fact.text}</p>
           </div>
         </details>
@@ -95,16 +95,37 @@
       factFace.hidden = true;
     }
 
+    // On touch devices a tap fires synthetic hover/leave events right after
+    // click, which instantly snapped the wheel back to the name face before
+    // the fact could be read. `pinned` tracks a tap-selected fact so hover
+    // and blur handlers below leave it alone until the same segment is
+    // tapped again (or a different one is tapped).
+    let pinned = null;
+
     ring.querySelectorAll(".facts-wheel__segment").forEach((btn) => {
       const fact = FACTS[Number(btn.dataset.index)];
-      btn.addEventListener("mouseenter", () => showFact(fact));
-      btn.addEventListener("focus", () => showFact(fact));
-      btn.addEventListener("click", () => showFact(fact));
+      btn.addEventListener("mouseenter", () => {
+        if (!pinned) showFact(fact);
+      });
+      btn.addEventListener("focus", () => {
+        if (!pinned) showFact(fact);
+      });
+      btn.addEventListener("click", () => {
+        if (pinned === fact) {
+          pinned = null;
+          showName();
+        } else {
+          pinned = fact;
+          showFact(fact);
+        }
+      });
     });
 
-    ring.addEventListener("mouseleave", showName);
+    ring.addEventListener("mouseleave", () => {
+      if (!pinned) showName();
+    });
     ring.addEventListener("focusout", (e) => {
-      if (!ring.contains(e.relatedTarget)) showName();
+      if (!pinned && !ring.contains(e.relatedTarget)) showName();
     });
   }
 
