@@ -46,7 +46,7 @@
       slug: "golf",
       label: "Golf",
       icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 21V4l11 4.5L6 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><ellipse cx="6" cy="21" rx="4" ry="1.2" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>',
-      text: "I started golfing this summer.",
+      text: "I started golfing this summer, and I'm terrible.",
       photo: "assets/photos/fact-golf.jpg",
     },
   ];
