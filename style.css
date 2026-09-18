@@ -1,5 +1,5 @@
 /* Dark theme. One accent (Arsenal red), used sparingly on links and one button.
-   Space Grotesk for headings/wordmark, Inter for body — two typefaces,
+   Space Grotesk for headings/wordmark, Inter for body: two typefaces,
    obviously different in feel. Spacing on a scale of 8. */
 
 :root {
@@ -210,7 +210,7 @@ footer.site-footer a:hover {
   transform: translateY(-2px);
 }
 
-/* Photo grid, Interests section — collapses gracefully per-slot when a
+/* Photo grid, Interests section: collapses gracefully per-slot when a
    photo file doesn't exist yet, same pattern as the hero .avatar. */
 
 .photo-grid {
