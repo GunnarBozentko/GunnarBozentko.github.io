@@ -84,3 +84,78 @@ visible checkbox they control — so this discrepancy is specific to
 headless/scripted PDF generation, not something end users will
 necessarily hit. Worth knowing if this page's print CSS gets tuned
 again: don't trust a headless page-count alone as ground truth.
+
+---
+
+## 2026-09-18 — `chrome --window-size` silently gave the wrong viewport during mobile testing
+
+**What happened:** While checking the homepage at a 375px mobile
+width, a headless Chrome screenshot taken with `--window-size=375,900`
+showed the nav and hero paragraph clipped mid-word at the right edge,
+looking exactly like a horizontal-overflow bug.
+
+**How it was diagnosed:** Before "fixing" anything, queried the actual
+rendered viewport with `document.documentElement.clientWidth` over the
+DevTools Protocol — it came back `489`, not `375`. The `--window-size`
+flag wasn't being honored by that Chrome build, so the screenshot was
+a 375px-wide crop of a wider, correctly-laid-out page, not the mobile
+page itself.
+
+**Fix:** Used `Emulation.setDeviceMetricsOverride` over CDP instead of
+the command-line flag to force a true 375px viewport. Re-tested: zero
+horizontal overflow (`scrollWidth === clientWidth === 375`) on all
+three pages.
+
+**Cause:** Same lesson as the 2026-09-13 PDF entry — a headless Chrome
+flag's stated behavior isn't ground truth until the actual rendered
+state is queried. `--window-size` looked correct (no error, screenshot
+produced) while silently measuring the wrong thing.
+
+---
+
+## 2026-09-18 — Fact-wheel tap on mobile appeared to do nothing
+
+**What happened:** On a touch device, tapping a segment in the "Fun
+facts" wheel briefly seemed to work and then immediately reverted to
+the center name face, so it looked like tapping did nothing at all.
+
+**How it was diagnosed:** Simulated a real touch tap over CDP
+(`Input.dispatchTouchEvent`) and confirmed the fact *did* display right
+after the tap. It only reverted when a synthetic `mouseleave`-style
+event followed shortly after — mobile browsers commonly fire ghost
+hover/leave events right after a tap for elements with `:hover`
+behavior, which was cancelling the tap's own effect almost instantly.
+
+**Fix:** Added a `pinned` state in `facts-wheel.js` — a tapped segment
+stays shown regardless of hover/blur events until the same segment is
+tapped again or a different one is chosen. Desktop hover-preview
+behavior is unchanged.
+
+**Cause:** The original interaction model was hover-only (`mouseenter`
+/ `mouseleave`) with click just re-using the same show function, with
+no accounting for touch devices synthesizing mouse events after a tap.
+
+---
+
+## 2026-09-18 — Fun facts with no real photo yet showed no text either
+
+**What happened:** On the mobile accordion view of "Fun facts",
+expanding Rubik's cube, Rocket League, or Golf showed nothing at all,
+while Pets/Soccer/Arsenal/Hobbies (which have real photos) worked
+fine.
+
+**How it was diagnosed:** User reported the specific broken entries
+directly. Inspecting the generated markup in `facts-wheel.js` showed
+the `<img>`'s `onerror` handler was `this.parentElement.style.display
+= 'none'` — hiding the whole `.facts-list__body` wrapper, which also
+contains the fact's `<p>` text, not just the broken image.
+
+**Fix:** Changed the handler to `this.style.display = 'none'`, so a
+missing photo only hides itself, matching the pattern already used for
+the hero avatar and the Interests photo grid.
+
+**Cause:** Copy-paste inconsistency between the working "hide only the
+image" pattern used elsewhere and this one spot, which hid the whole
+container instead. Only visible for facts without a photo file yet, so
+it didn't show up until real content (a text-only fact) hit that
+code path.
