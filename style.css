@@ -183,17 +183,6 @@ footer.site-footer a:hover {
   color: var(--accent);
 }
 
-/* Hero photo */
-
-.avatar {
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid var(--border);
-  margin-bottom: var(--space-3);
-}
-
 /* Tags / hobby chips */
 
 .tags {
@@ -766,45 +755,92 @@ main.home {
   justify-content: center;
 }
 
-.panel--hero,
 .panel--cta {
   min-height: 90vh;
   text-align: center;
   align-items: center;
 }
 
-.panel--hero .avatar {
+.panel--hero {
+  min-height: 90vh;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+  display: grid;
+  grid-template-columns: minmax(0, 60ch) 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  text-align: left;
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
   margin-left: auto;
-  margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  .panel--hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo img {
+    margin-left: 0;
+  }
 }
 
 .eyebrow {
   font-family: "Space Grotesk", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin: 0 0 var(--space-3);
+}
+
+.eyebrow span {
   color: var(--accent);
-  margin: 0 0 var(--space-2);
 }
 
 .hero-inner h1 {
-  font-size: clamp(2.75rem, 7vw, 4.5rem);
-  letter-spacing: -0.01em;
+  font-size: clamp(3rem, 8vw, 5.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.02;
 }
 
 .hero-sub {
   color: var(--muted);
   font-size: 1.2rem;
-  max-width: 42ch;
-  margin: 0 auto var(--space-4);
+  max-width: 40ch;
+  margin: var(--space-4) 0;
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--border);
 }
 
 .hero-cta {
   display: flex;
-  gap: var(--space-2);
-  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
   flex-wrap: wrap;
+}
+
+.link-arrow {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.link-arrow:hover,
+.link-arrow:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .button--ghost {
