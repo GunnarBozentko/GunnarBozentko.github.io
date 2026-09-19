@@ -1,0 +1,178 @@
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 6027
+Server: GitHub.com
+Content-Type: text/html; charset=utf-8
+Last-Modified: Fri, 18 Sep 2026 21:12:24 GMT
+Access-Control-Allow-Origin: *
+Strict-Transport-Security: max-age=31556952
+ETag: "6aada938-178b"
+expires: Sat, 19 Sep 2026 19:13:07 GMT
+Cache-Control: max-age=600
+x-proxy-cache: MISS
+X-GitHub-Request-Id: 4BDE:303E9B:B01F4F:E6BDA3:6AAEDC6B
+x-github-edge-region: iad
+Accept-Ranges: bytes
+Date: Sat, 19 Sep 2026 19:03:19 GMT
+Via: 1.1 varnish
+Age: 12
+X-Served-By: cache-den-kden1300093-DEN
+X-Cache: HIT
+X-Cache-Hits: 1
+X-Timer: S1789844599.348233,VS0,VE1
+Vary: Accept-Encoding
+X-Fastly-Request-ID: 1bbff95793efe592354cd5edbcaef1e72f5da48b
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gunnar Bozentko</title>
+  <meta name="description" content="Gunnar Bozentko: statistician, data scientist, Arsenal supporter, occasional skier.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-body">
+
+  <div class="bg-layer bg-layer--a" aria-hidden="true"></div>
+  <div class="bg-layer bg-layer--b" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="wordmark" href="index.html">Gunnar Bozentko</a>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">About</a></li>
+        <li><a href="skiing.html">Skiing</a></li>
+        <li><a href="resume.html">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="home">
+
+    <section id="hero" class="panel panel--hero" data-gradient="t1">
+      <div class="hero-inner">
+        <p class="eyebrow">Statistician <span>&middot;</span> Future AI Engineer</p>
+        <h1>Gunnar Bozentko.</h1>
+        <p class="hero-sub">
+          Magna cum laude BS in Statistics from the Colorado School of Mines,
+          now staying on for the 4+1 Data Science graduate program.
+        </p>
+        <div class="hero-cta">
+          <a class="button" href="resume.html">View r&eacute;sum&eacute;</a>
+          <a class="link-arrow" href="skiing.html">See the ski map &rarr;</a>
+        </div>
+      </div>
+      <!-- Add a real photo at assets/photo.jpg and this will pick it up automatically. -->
+      <div class="hero-photo">
+        <img src="assets/photo.jpg" alt="Photo of Gunnar Bozentko" onerror="this.closest('.hero-photo').style.display='none'">
+      </div>
+    </section>
+
+    <section id="about" class="panel" data-gradient="t2">
+      <h2>About</h2>
+      <p>
+        I just graduated magna cum laude with a BS in Statistics from the
+        Colorado School of Mines (Aug 2022&ndash;May 2026), and I'm continuing
+        there as a graduate student in the 4+1 Data Science program.
+      </p>
+      <p>
+        I grew up in Newtown, Connecticut, and lived there my whole life
+        before heading out to Colorado for school. I've got a sister, and my
+        mom and dad are still back in Newtown.
+      </p>
+      <p>
+        I grew up skiing in Vermont (Stratton, Magic, and Bromley) with the
+        Swedish Ski Club in Winhall, Vermont.
+      </p>
+      <p>
+        Want the professional details? Check out my <a href="resume.html">resume
+        and experience</a> page.
+      </p>
+    </section>
+
+    <section id="interests" class="panel" data-gradient="t3">
+      <h2>Off the clock</h2>
+      <p>
+        I'm a huge Arsenal supporter (I don't miss a match if I can help it),
+        and I play soccer myself. I also ski whenever I get the
+        chance, and I've started keeping a running log of every place I've
+        skied, mapped out on the <a href="skiing.html">skiing page</a>.
+      </p>
+      <p>
+        Outside of sports, I picked up chess this past summer and I've been
+        hooked ever since. I'm also a big reader, mostly investing and
+        self-improvement books.
+      </p>
+      <ul class="tags">
+        <li>Statistics</li>
+        <li>Data Science</li>
+        <li>Arsenal FC</li>
+        <li>Soccer</li>
+        <li>Skiing</li>
+      </ul>
+
+      <!-- Add real photos at these paths and each slot picks them up automatically. -->
+      <div class="photo-grid">
+        <div class="photo-grid__item">
+          <img src="assets/photos/soccer.jpg" alt="Playing soccer" onerror="this.parentElement.style.display='none'">
+        </div>
+        <div class="photo-grid__item">
+          <img src="assets/photos/skiing.jpg" alt="Skiing" onerror="this.parentElement.style.display='none'">
+        </div>
+        <div class="photo-grid__item">
+          <img src="assets/photos/pets.jpg" alt="Pearl, Pippa, and Cleo" onerror="this.parentElement.style.display='none'">
+        </div>
+      </div>
+    </section>
+
+    <section id="facts" class="panel" data-gradient="t4">
+      <h2>Fun facts</h2>
+      <!-- Add real photos at assets/photos/fact-*.jpg and each will be
+           picked up automatically; content lives in facts-wheel.js. -->
+      <div class="facts-wheel" data-facts-wheel>
+        <div class="facts-wheel__ring" data-facts-ring></div>
+        <div class="facts-wheel__center">
+          <div class="facts-wheel__face facts-wheel__face--name" data-face="name">
+            <p class="facts-wheel__name">Gunnar<br>Bozentko</p>
+          </div>
+          <div class="facts-wheel__face facts-wheel__face--fact" data-face="fact" hidden>
+            <img class="facts-wheel__photo" alt="" onerror="this.style.display='none'">
+            <p class="facts-wheel__text"></p>
+          </div>
+        </div>
+      </div>
+      <ul class="facts-list" data-facts-list></ul>
+    </section>
+
+    <section id="cta" class="panel panel--cta" data-gradient="t5">
+      <h2>Want more?</h2>
+      <p>
+        Take a look at my <a href="resume.html">r&eacute;sum&eacute; and
+        experience</a>, or check out the <a href="skiing.html">interactive
+        ski map</a>.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>
+        <a href="mailto:gunnarbozentko@mines.edu">Email</a>
+        &middot;
+        <a href="https://www.linkedin.com/in/gunnar-bozentko-64283426b/">LinkedIn</a>
+        &middot;
+        <a href="https://github.com/GunnarBozentko">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="scroll-gradient.js"></script>
+  <script src="facts-wheel.js"></script>
+</body>
+</html>
